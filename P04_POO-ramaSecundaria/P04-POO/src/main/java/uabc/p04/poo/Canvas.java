@@ -25,12 +25,12 @@ public class Canvas
 
     /**
      * Factory method to get the canvas singleton object.
+     * @return 
      */
     public static Canvas getCanvas()
     {
         if(canvasSingleton == null) {
-            canvasSingleton = new Canvas("BlueJ Picture Demo", 500, 300, 
-                                         Color.white);
+            canvasSingleton = new Canvas("Canvas", 400, 600, Color.white);
         }
         canvasSingleton.setVisible(true);
         return canvasSingleton;
@@ -49,7 +49,7 @@ public class Canvas
      */
     public Canvas(String title)
     {
-        this(title, 300, 300, Color.white);
+        this(title, 400, 600, Color.white);
     }
 
     /**

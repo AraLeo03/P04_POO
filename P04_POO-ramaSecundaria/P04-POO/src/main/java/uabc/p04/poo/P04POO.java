@@ -24,6 +24,8 @@ public class P04POO {
         
         GraphicString mostrarPalabra = new GraphicString();
         mostrarPalabra.mostrarString("Hola jiji",15,50,Color.RED,20);
+        Rectangle rectangulo = new Rectangle();
+        rectangulo.draw();
         
         wordle.juego();
     }
