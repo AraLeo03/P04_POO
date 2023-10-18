@@ -12,17 +12,41 @@ import java.awt.*;
  * @author Dell
 // */
 public class GraphicString {
+    public String palabra;
+    public int xPos;
+    public int yPos;
+    public Color color;
+    public int tamaño;
 
     public GraphicString() {
+        palabra="carro";
+        xPos = 15;
+        yPos = 15;
+        color = Color.RED;
+        tamaño = 20;
+    }
+
+    public GraphicString(String palabra, int xPos, int yPos, Color color, int tamaño) {
+        this.palabra = palabra;
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.color = color;
+        this.tamaño = tamaño;
     }
     
     
-    public void mostrarString(String palabra,int xPos,int yPos,Color color,int tamaño){
+    public void mostrarString(){
         
-        Canvas canvas = new Canvas("Canvas");
+        Canvas canvas = Canvas.getCanvas();
         Font font = new Font("Arial", Font.PLAIN, tamaño);  
         canvas.setFont(font);
         canvas.drawString(palabra,xPos,yPos,color);
+        canvas.wait(10);
+    }
+    
+    public void borrarString(){
+        Canvas canvas = Canvas.getCanvas();
+        canvas.eraseString(palabra, xPos, yPos);
     }
     
 }

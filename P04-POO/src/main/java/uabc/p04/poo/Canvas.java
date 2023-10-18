@@ -30,7 +30,7 @@ public class Canvas
     public static Canvas getCanvas()
     {
         if(canvasSingleton == null) {
-            canvasSingleton = new Canvas("Canvas", 400, 600, Color.white);
+            canvasSingleton = new Canvas("Canvas", 350, 600, Color.white);
         }
         canvasSingleton.setVisible(true);
         return canvasSingleton;

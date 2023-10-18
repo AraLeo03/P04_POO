@@ -18,46 +18,24 @@ public class Rectangle {
     private int size;
 
     public Rectangle(String color, int xPos, int yPos, int size) {
-        this.color = getColorDeString(color);
+        this.color = ObtenerColorDeString.getColorDeString(color);
         this.xPos = xPos;
         this.yPos = yPos;
         this.size = size;
     }
 
     public Rectangle() {
-        color = getColorDeString("amarillo");
+        color = ObtenerColorDeString.getColorDeString("amarillo");
         xPos = 20;
         yPos = 20;
         size = 25;
     }
 
-    private Color getColorDeString(String color) {
-        switch (color.toLowerCase()) {
-            case "rojo":
-                return Color.RED;
-            case "verde":
-                return Color.GREEN;
-            case "azul":
-                return Color.BLUE;
-            case "amarillo":
-                return Color.YELLOW;
-            case "magenta":
-                return Color.MAGENTA;
-            case "naranja":
-                return Color.ORANGE;
-            case "rosa":
-                return Color.PINK;
-            default:
-                return Color.BLACK; // Color predeterminado si no se reconoce el nombre
-        }
-    }
+    
 
     public void draw() {
         Canvas canvas = Canvas.getCanvas();
-        java.awt.Rectangle rectangle = new java.awt.Rectangle(xPos, yPos, size, size);
-//        canvas.draw(rectangle);
         canvas.setForegroundColor(color);
-
         canvas.fillRectangle(xPos, yPos, size, size);
         canvas.wait(10);
     }
@@ -68,7 +46,7 @@ public class Rectangle {
     }
 
     public void changeColor(String newColor) {
-        color = Color.decode(newColor);
+        color = ObtenerColorDeString.getColorDeString(newColor);
         draw();
     }
 
@@ -83,7 +61,7 @@ public class Rectangle {
     }
 
     public void setColor(String color) {
-        this.color = Color.decode(color);
+        this.color = ObtenerColorDeString.getColorDeString(color);
     }
 
     public int getxPos() {
