@@ -21,6 +21,21 @@ import java.awt.Rectangle;
 
 public class Canvas
 {
+    private static Canvas canvasSingleton;
+
+    /**
+     * Factory method to get the canvas singleton object.
+     * @return 
+     */
+    public static Canvas getCanvas()
+    {
+        if(canvasSingleton == null) {
+            canvasSingleton = new Canvas("Canvas", 400, 600, Color.white);
+        }
+        canvasSingleton.setVisible(true);
+        return canvasSingleton;
+    }
+    
     private JFrame frame;
     private CanvasPane canvas;
     private Graphics2D graphic;
@@ -34,7 +49,7 @@ public class Canvas
      */
     public Canvas(String title)
     {
-        this(title, 300, 300, Color.white);
+        this(title, 400, 600, Color.white);
     }
 
     /**
@@ -222,9 +237,11 @@ public class Canvas
      * @param  text   the String to be displayed 
      * @param  x      x co-ordinate for text placement 
      * @param  y      y co-ordinate for text placement
+     * @param color   color to be displayed
      */
-    public void drawString(String text, int x, int y)
+    public void drawString(String text, int x, int y, Color color)
     {
+        graphic.setColor(color);
         graphic.drawString(text, x, y);   
         canvas.repaint();
     }

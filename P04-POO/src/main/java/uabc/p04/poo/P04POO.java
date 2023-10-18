@@ -4,7 +4,7 @@
 package uabc.p04.poo;
 
 import java.util.Scanner;
-
+import java.awt.Color;
 /**
  *
  * @author Dell
@@ -20,6 +20,13 @@ public class P04POO {
 
     public static void main(String[] args) {
         P04POO wordle = new P04POO();
+        
+        
+        GraphicString mostrarPalabra = new GraphicString();
+        mostrarPalabra.mostrarString("Hola jiji",15,50,Color.RED,20);
+        Rectangle rectangulo = new Rectangle();
+        rectangulo.draw();
+        
         wordle.juego();
     }
 
